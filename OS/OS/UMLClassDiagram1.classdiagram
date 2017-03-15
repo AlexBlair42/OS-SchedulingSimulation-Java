@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="c6b480b0-2b43-4832-8535-b953be4ea1a7" name="UMLClassDiagram1" linkedPackageId="7ec7861f-40fa-474a-8ca9-88263982d771" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="0c848ab5-4f49-4515-9be5-91e3ac97ab5b">
+      <profileInstance Id="33ddde32-f6cc-412e-95d1-ce610c2c86b8" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="13751afe-c250-457d-80a0-1756c49e0750">
+      <profileInstance Id="86446ac6-09ec-4ef5-8cc0-562b78b35379" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="04befef7-da0e-4178-88d7-29af1852bad5" name="PCB" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9d365bd5-f478-49fe-9a74-59e9f415e7cf" />
+        <generalsInternal>
+          <generalization Id="c4f00e93-d423-43e0-8a8d-5b42ae77364a" isSubstitutable="false">
+            <classMoniker Id="f607f34b-eadf-4740-983c-64d6d96e56de" LastKnownName="PEC" />
+            <elementDefinition Id="95cb6191-f8cf-44d7-96a8-0d1d099042d3" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="f409a49d-8e54-4203-b5d3-8a455be115d1" name="boolean processState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e10a9448-e124-4b83-8a35-2ef971de0ddf" />
+          </property>
+          <property Id="ca541c32-c719-4ee5-99f1-47d37b643642" name="int counter" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7f61db59-55ec-4ac1-8d20-ccc75453bcc0" />
+          </property>
+          <property Id="add2bf2a-6a00-4e6f-addb-92a67f30882c" name="vector Info" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="77b8627c-48cf-49ba-867f-f607c92ef799" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="0fbb127b-6c99-4e76-a4ee-2e19aee05f6c" name="string scheduling(string proccess" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2c0bcf01-ad0e-474c-9218-7bb5b3a806ea" />
+          </operation>
+          <operation Id="22c514c9-c618-4465-b102-62d610da7bf8" name="boolean processState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="703125cc-f56c-4901-9a41-f36bb91e5337" />
+          </operation>
+          <operation Id="563ffc9e-0fd5-469d-bfdf-a388a490b71c" name="void setProcessState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8b229060-7734-4a1a-a0d2-a3bb576c4f3a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="96bf6f5e-43a4-4067-8345-5ef5fe1ec2c8" name="process" direction="In" isUnique="false">
+                  <elementDefinition Id="814291d4-68a7-49ac-bf89-4f5960739e08" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7433ab5b-e0a5-4bc0-8aab-76bb5a522a62" name="int getCounter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="35dac3b3-5fb8-4670-9436-a0a22c7c75ae" />
+          </operation>
+          <operation Id="03851b55-2a20-405f-b5a1-6b1c49b6ea5b" name="void setCounter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bfed76a2-90d5-4ffc-9bc6-f12260435420" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b4211e3b-e35a-4a0e-9d75-9524506ab1f3" name="int counter" direction="In" isUnique="false">
+                  <elementDefinition Id="b305a730-00ab-4ae6-974e-11e7993cb275" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f607f34b-eadf-4740-983c-64d6d96e56de" name="PEC" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="22a18047-fd15-4c7c-9672-e2bddcf0e95b" />
+        <ownedAttributesInternal>
+          <property Id="6f42d0d0-6cce-4a2a-9e8b-d76ddb4c7080" name="int ProcessId" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d67d4b47-e6c5-4b06-9314-88a2a923acc9" />
+          </property>
+          <property Id="b58abfab-a2b8-40f5-a4d2-53fc297f0f95" name="PCB PCB" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ec6c74d1-d407-493f-96b8-86312c24b038" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="72b15d95-9945-4b2b-90d5-9d1fa71d34ab" name="void setPCB" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="06d82564-780f-4d0b-8bf6-8a8b48dc1c37" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2ebeb7c5-f575-426c-98de-1e09a93b217a" name="PCB" direction="In" isUnique="false">
+                  <elementDefinition Id="c9c899bf-4346-4bd4-b595-6c15c63311f9" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a228bd3c-5ac0-4adf-aea6-e87d80386f7c" name="PCB getPCB" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0080d2d7-1de4-4326-a17a-b43aa13ec949" />
+          </operation>
+          <operation Id="ad08c3e4-0836-4ed3-8ba7-7f3be6d9cd0e" name="void set ProcessID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="57a08175-6913-487f-b661-011f0118d690" />
+          </operation>
+          <operation Id="21c82ca5-d17d-4ed8-b8bf-2c764a267aa7" name="int get processID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b3117b67-10d8-4b9d-a777-b1abdc3dfb0b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d2041e1e-3b58-4179-80dc-14cc73667cf8" name="DataFiles" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c9b68e36-1bc3-47d4-9680-7fc00cc84a25" />
+        <ownedAttributesInternal>
+          <property Id="baad6843-0032-4fa1-8ffe-99c2e5cc981d" name="float arriival" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c7b70347-b7db-4ac8-b54c-15099c0a2836" />
+          </property>
+          <property Id="17d31772-8cbd-4014-ac0c-391cd625ff44" name="float cpuTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5f252a5f-4832-4218-bf00-a4bae41db3a0" />
+          </property>
+          <property Id="dc3cd5a9-0408-44c9-8c9b-10a964d497f5" name="float IOTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f8bd73b0-7174-435a-a19b-287254aff462" />
+          </property>
+          <property Id="24d8dad5-f821-4fca-a68b-dc590900a7ca" name="int rand" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="61ccf0ff-086d-4e93-94ae-56039b8fcbd7" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d89bf4b9-6e67-4a8c-bfc2-fc85d31de597" name="float getArrival" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fe9728be-f841-4631-9f3c-d57254f5bdde" />
+          </operation>
+          <operation Id="0dcdf022-2567-4e9a-b45f-363aa10594fe" name="float getCpuTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9b79d7db-96ab-445e-8f80-edb6a55fb5d1" />
+          </operation>
+          <operation Id="e723f9f7-5267-4425-8473-d1ee5ec78db8" name="float getIOTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9f567d55-d583-4a51-a6a9-14580d45b5ef" />
+          </operation>
+          <operation Id="1630a23e-e142-4cd2-97a6-898daab68adc" name="int getRand" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ce99449e-abd8-4a63-a9e7-12647046b640" />
+          </operation>
+          <operation Id="0e9aedfa-520f-4c18-9e27-86e51d84ca3d" name="void setArrival" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="862a81d9-1683-494b-ab65-5766c6b6870e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="38d14558-c4cf-4bc6-8eac-206c95b3d0a0" name="float time)" direction="In" isUnique="false">
+                  <elementDefinition Id="3eeb5e9b-66cc-4313-8608-90cab0ad7d7d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bf19b3a1-5ded-4404-b228-5e8fb4422688" name="void setCpuTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a7bbd8e6-7aad-4e33-b804-650d810f8737" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="97fa2201-b9bf-47aa-829d-453cbeef8684" name="time" direction="In" isUnique="false">
+                  <elementDefinition Id="c67620c9-bc1e-4c59-b8e1-59179415f78f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="79a9c13d-0ed5-476a-9561-b88673a85983" name="void floatIOTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6aead073-0c23-4e1e-8376-35d363df014c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="adc084d0-2b73-4018-8557-9a479bcfe239" name="time" direction="In" isUnique="false">
+                  <elementDefinition Id="00bc30ae-2940-43d6-9e09-84891bab2ada" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8922ee1a-8e58-4d9e-bc58-1914971de816" name="void setRand" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0c19c1d-d92c-4951-87ec-6cd12ed8dc73" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="88839229-a3da-46c2-b278-ed85e1a75b78" name="int rand" direction="In" isUnique="false">
+                  <elementDefinition Id="bf1c3fcd-8e66-4221-965f-6262120f5b41" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="50c4937d-c145-4570-b5f7-65d0459eb464" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="063b2149-83cd-485f-a377-ee3cf3ac9941" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="7ec7861f-40fa-474a-8ca9-88263982d771" name="OS">
+    <elementDefinition Id="3c015955-a32d-47ca-ab35-7d6e99202498" />
+  </package>
+</logicalClassDesignerModel>
