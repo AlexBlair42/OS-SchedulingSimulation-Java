@@ -1,20 +1,26 @@
 
 public class Processes {
 	int time;
-
-	int getTime(){
-		return time;
-	}
+	String name;
+	int waitTime;
+	
+	int getwaitTime(){return waitTime;}
+	int getTime(){return time;}
+	String getName(){return name;}
 	void setTime( int t){
 		time = t;
 	}
-	
-	Processes process(){
-		return this;
+	void setName(String n){
+		name = n;
 	}
-	Processes process(int t){
+	void setWaitTime(int w){
+		waitTime =w;
+	}
+	
+	public Processes(){
+	}
+	public Processes(int t, String n){
 		time = t;
-		return this;
-		
+		name = n;
 	}
 }
