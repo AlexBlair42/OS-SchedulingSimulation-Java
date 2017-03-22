@@ -10,7 +10,6 @@ import java.util.Random;
  * This project is a simulation of different scheduling algorithms for processes.
  */
 public class Main {
-	
     public static void main (String[] args)
     {
     	

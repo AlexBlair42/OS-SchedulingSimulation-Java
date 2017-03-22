@@ -8,30 +8,29 @@ import java.util.Random;
  * @author Julia Abbott
  */
 public class PCB extends PEC {
-	boolean processState = false;
-	int counter = 0;
-	DataFiles data;
-	Random rand = new Random();
-	randomZombie = rand.nextInt() % 100000000 + 1;
+	private boolean processState = false;
+	private int counter = 0;
+	private DataFiles data = new DataFiles();
+	
 	
 	//get and set methods for all variables
-	boolean getProcessState(){return processState;}
-	int getCounter(){return counter;}
-	DataFiles getData(){return data;}
+	public boolean getProcessState(){return processState;}
+	public int getCounter(){return counter;}
+	public DataFiles getData(){return data;}
 	
-	void setProcessState(boolean ps){processState = ps;}
-	void setCounter(int c) {counter = c;}
-	void setData(DataFiles d){data = d;}
+	public void setProcessState(boolean ps){processState = ps;}
+	public void setCounter(int c) {counter = c;}
+	public void setData(DataFiles d){data = d;}
 	
 	
 	//default constructor
 	
-	PCB pcb(){
+	public PCB pcb(){
 		return this;
 	}
 	
 	//useful constructor
-	PCB pcb(boolean ps, int c, DataFiles d)
+	public PCB pcb(boolean ps, int c, DataFiles d)
 	{
 		setProcessState(ps);
 		setCounter(c);
