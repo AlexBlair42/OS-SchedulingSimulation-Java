@@ -22,9 +22,9 @@ public class Main {
     	ArrayList<PEC> readyProcess = new ArrayList<PEC>();
     	
     	
-    	//creation of processes
-    	for(int i = 10000; i >=0; i--){
-    		
-    	}
+    	FCFS run = new FCFS();
+    	run.runFCFS();
+    	run.addStats();
+    	run.showStatsFCFS();
     }
 }

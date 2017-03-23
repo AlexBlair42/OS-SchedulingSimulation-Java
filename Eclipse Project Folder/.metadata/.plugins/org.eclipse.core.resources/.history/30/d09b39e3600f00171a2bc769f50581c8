@@ -1,0 +1,81 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+/**
+ * This class models a First-Come, First-Served scheduler  
+ * @author mgalle19
+ *	@version 1.00 03-22-17
+ */
+public class FCFS {
+
+	// keeps track of the total ticks of the CPU
+	int totalTime =0;
+	int averageWaitTime;
+	int averageTurnaround;
+	int averageResponse;
+	// A queue to hold all of the processes
+    public Queue<Processes> queue = new LinkedList<Processes>();
+	
+    // An array to make all of the processes 
+	public Processes[] process = {new Processes(10,"p1"),new Processes(20,"p2"),
+						   new Processes(30,"p3"),new Processes(25,"p4"),
+						   new Processes(10,"p5")};
+	
+
+	
+/**
+ * This function runs the model for the scheduler 	
+ */
+	void runFCFS(){
+// add the process to the queue
+        	for (int i = 0; i < 5; i++){
+        		queue.add(process[i]);
+        	}
+		// while loop to go keep running until the queue is empty 
+        	while(!queue.isEmpty()){
+        		// for loop to simulate the CPU working on the process 
+        		for (int i =0; i < queue.element().getTime();i++){
+        			totalTime++;
+        		}
+        		// sets the turnaround time to the process that just ran
+        		queue.element().setTurnaround(totalTime);
+        		// removes the process that just ran from the queue
+        		queue.remove();
+			
+        	if(!queue.isEmpty()){
+        		// sets the time the time the process waited
+        		queue.element().setWaitTime(totalTime);
+        		// sets the time the time until the process got started 
+        		queue.element().setResponse(totalTime);
+			}
+		}
+	
+        }
+        /**
+         * This function calculates the different variables we need 
+         */
+        void addStats(){
+        	for (int i =0; i < 5; i++){
+        		// add up all of the wait times for the processes 
+        		averageWaitTime =averageWaitTime+ process[i].getwaitTime();
+        		// adds up all of the turnaround times for the processes
+        		averageTurnaround= averageTurnaround + process[i].getTurnaround();
+        		// add up all of the response time for the process
+        		averageResponse = averageResponse + process[i].getResponse();
+        	}
+        	// calucaltes the averages for the wait time, turnaround, and responses times.
+        	averageWaitTime = averageWaitTime/5;
+        	averageTurnaround = averageTurnaround/5;
+        	averageResponse = averageResponse/5;
+        }
+        /**
+         * Prints our the stats of the scheduler
+         */
+        void showStatsFCFS(){
+        	System.out.println("FCFS: ");
+        	System.out.printf("Average Wait Time: %d\n",averageWaitTime);
+        	System.out.printf("Average Turnaround Time: %d\n",averageTurnaround);
+        	System.out.printf("Average Response Time: %d\n", averageResponse);
+        }
+}

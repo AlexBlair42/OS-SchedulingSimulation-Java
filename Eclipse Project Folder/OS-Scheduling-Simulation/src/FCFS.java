@@ -74,8 +74,8 @@ public class FCFS {
          */
         void showStatsFCFS(){
         	System.out.println("FCFS: ");
-        	System.out.printf("Average Wait Time: %d\n",averageWaitTime);
-        	System.out.printf("Average Turnaround Time: %d\n",averageTurnaround);
-        	System.out.printf("Average Response Time: %d\n", averageResponse);
+        	System.out.printf("Average Wait Time: %d ms\n",averageWaitTime);
+        	System.out.printf("Average Turnaround Time: %d ms\n",averageTurnaround);
+        	System.out.printf("Average Response Time: %d ms\n", averageResponse);
         }
 }
