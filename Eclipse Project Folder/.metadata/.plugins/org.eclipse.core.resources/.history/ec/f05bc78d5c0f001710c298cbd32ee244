@@ -9,7 +9,7 @@ public class RR {
 	
 	public Queue<Processes> RRQ = new LinkedList<Processes>(); 
 	
-	public Processes[] process = {new Processes(50, "p1"), new Processes(20, "p2"), new Processes(30, "p3"),
+	public Process[] = {new Processes(50, "p1"), new Processes(20, "p2"), new Processes(30, "p3"),
 						new Processes(100, "p4"), new Processes(10, "p5")};
 
 }
