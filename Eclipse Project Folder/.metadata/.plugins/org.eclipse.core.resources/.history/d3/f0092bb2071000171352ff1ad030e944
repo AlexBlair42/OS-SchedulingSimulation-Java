@@ -26,12 +26,5 @@ public class Main {
     	run.runFCFS();
     	run.addStats();
     	run.showStatsFCFS();
-    	
-    	RR RRrun = new RR();
-    	RRrun.runRR();
-    	RRrun.CalcStats();
-    	RRrun.ConsoleStats();
-    	
-    	
     }
 }

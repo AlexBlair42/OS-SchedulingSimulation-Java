@@ -9,9 +9,7 @@ public class RR {
 	int avgWait;
 	int avgTurn;
 	int avgResp;
-	int t_quant1 = 20;
-	int t_quant2 = 30;
-	int t-quant3 = 40;
+	int t_quant = 20;
 	// A queue to hold all processes
 	public Queue<Processes> RRQ = new LinkedList<Processes>(); 
 	// An array to make all of the processes
