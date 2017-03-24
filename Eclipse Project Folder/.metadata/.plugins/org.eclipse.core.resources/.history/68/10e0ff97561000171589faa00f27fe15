@@ -96,7 +96,7 @@ public class Multiprocessor {
            averageResponse = averageResponse/8;
     }
      void showStatsMP(){
-               System.out.println("Multiprocessor: ");
+               System.out.println("Multilevel Feedback Queue: ");
                System.out.printf("Average Wait Time: %d ms\n",averageWaitTime);
                System.out.printf("Average Turnaround Time: %d ms\n",averageTurnaround);
                System.out.printf("Average Response Time: %d ms\n", averageResponse);
