@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Random;
 import java.util.Scanner;
 
 public class RR {
@@ -14,14 +13,11 @@ public class RR {
 	int t;
 	int waitTime= 0;
 	int Resp;
-	Random r = new Random();
-	int k = r.nextInt() % 300 + 1;
-	
 	// A queue to hold all processes
 	public Queue<Processes> RRQ = new LinkedList<Processes>(); 
 	// An array to make all of the processes
-	public Processes[] process = {new Processes (k, "p1"), new Processes(k, "p2"), new Processes(k, "p3"),
-						new Processes(k, "p4"), new Processes(k, "p5")};
+	public Processes[] process = {new Processes(50, "p1"), new Processes(20, "p2"), new Processes(30, "p3"),
+						new Processes(100, "p4"), new Processes(10, "p5")};
 	
 	/**
 	 * This function executes the Round Robin Algorithm
