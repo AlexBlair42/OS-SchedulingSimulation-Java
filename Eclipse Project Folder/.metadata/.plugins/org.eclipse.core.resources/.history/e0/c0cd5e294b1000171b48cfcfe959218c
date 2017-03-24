@@ -15,7 +15,7 @@ public class RR {
 	int waitTime= 0;
 	int Resp;
 	Random r = new Random();
-	int k = r.nextInt(60- 10)+10;;
+	int k = r.nextInt(90- 10)+1;;
 	
 	// A queue to hold all processes
 	public Queue<Processes> RRQ = new LinkedList<Processes>(); 

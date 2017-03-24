@@ -16,7 +16,7 @@ public class FeedBack {
 	int Resp;
 	
 	Random o = new Random();
-	int e = o.nextInt(60 - 10)+10;
+	int e = o.nextInt(130- 10);
 	
 	public Queue<Processes> queue1 = new LinkedList<Processes>();
 	public Queue<Processes> queue2 = new LinkedList<Processes>();
