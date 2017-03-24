@@ -75,9 +75,9 @@ public class RR {
 			}
 			if (!RRQ.isEmpty())
 			{
-				// Set the time to the time the process waited 
+				// Set the time to the time the process waited (Needs Modified)
 				RRQ.element().setWaitTime(totalTime);
-				// Set the response time 
+				// Set the response time (Needs Modified)
 				RRQ.element().setResponse(totalTime);
 			}
 		}
