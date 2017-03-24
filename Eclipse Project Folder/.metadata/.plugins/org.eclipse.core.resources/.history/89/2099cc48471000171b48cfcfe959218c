@@ -12,7 +12,12 @@ import java.util.Random;
 public class Main {
     public static void main (String[] args)
     {
-       		
+    	
+       	//create random number for process generation
+       	Random rand = new Random();
+       	int rand_p = rand.nextInt()% (1000 + 1);
+       	
+    	
     	//process for controlling when a process is created
     	ArrayList<PEC> readyProcess = new ArrayList<PEC>();
     	
@@ -31,13 +36,6 @@ public class Main {
     	RRrun2.runRR(20);
     	RRrun2.CalcStats();
     	RRrun2.ConsoleStats(20);
-    	
-    	FeedBack FBrun = new FeedBack();
-    	FBrun.runFeedback();
-    	FBrun.addStats();
-    	FBrun.showStatsFB();
-    	
-    	
 
     	
     	
