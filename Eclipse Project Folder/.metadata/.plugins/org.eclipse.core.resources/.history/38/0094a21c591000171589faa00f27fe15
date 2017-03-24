@@ -19,9 +19,9 @@ public class Multiprocessor {
                new Processes(10,"p5"), new Processes(50,"p6"), new Processes(40, "p7"), new Processes(40,"p8")};
     
     void runMP(){
-        for(int z = 0; z < 8; z++){
-            process[z].isPositive(process[z]);
-        }
+    	for(int z = 0; z < 8; z++){
+			process[z].isPositive(process[z]);
+		}
         queue1.add(process[0]);
         queue1.add(process[1]);
         queue2.add(process[2]);
@@ -32,71 +32,47 @@ public class Multiprocessor {
         queue4.add(process[7]);
         
         while(!queue1.isEmpty() || !queue2.isEmpty() || queue3.isEmpty() || queue4.isEmpty()){
-       
-          
-                if(!queue1.isEmpty()){
-                    if(queue1.element().getTime() <= 0){
-                        queue1.element().setTurnaround(totalTime);
-                        queue1.remove();
-                    if(!queue1.isEmpty()){
-                        queue1.element().setResponse(totalTime);
-                        queue1.element().setWaitTime(totalTime);
-                    }
+            
+            if(queue1.element().getTime() <= 0){
+                queue1.element().setTurnaround(totalTime);
+                queue1.remove();
+                queue1.element().setResponse(totalTime);
+                queue1.element().setWaitTime(totalTime);
+                
             }
-                }
-                if(!queue2.isEmpty()){
-                    if(queue2.element().getTime() <=0){
-                            queue2.element().setTurnaround(totalTime);
-                            queue2.remove();
-                        if(!queue2.isEmpty()){
-                            queue2.element().setResponse(totalTime);
-                            queue2.element().setWaitTime(totalTime);
-                        }
+            else if(queue2.element().getTime() <= 0){
+                queue2.element().setTurnaround(totalTime);
+                queue2.remove();
+                queue2.element().setResponse(totalTime);
+                queue2.element().setWaitTime(totalTime);
+                
             }
-                }
-            if(!queue3.isEmpty()){
-                if(queue3.element().getTime() <= 0){
-                    queue3.element().setTurnaround(totalTime);
-                    queue3.remove();
-                if(queue3.isEmpty()){
-                    queue3.element().setResponse(totalTime);
-                    queue3.element().setWaitTime(totalTime);
-                }
+            else if(queue3.element().getTime() <= 0){
+                queue3.element().setTurnaround(totalTime);
+                queue3.remove();
+                queue3.element().setResponse(totalTime);
+                queue3.element().setWaitTime(totalTime);
+                
             }
-            }
-            if(!queue4.isEmpty()){
-                if(queue4.element().getTime() <= 0){
+            else if(queue4.element().getTime() <= 0){
                 queue4.element().setTurnaround(totalTime);
                 queue4.remove();
-                if(!queue4.isEmpty()){
                 queue4.element().setResponse(totalTime);
                 queue4.element().setWaitTime(totalTime);
-                }
+                
             }
-            }
+
             totalTime++;
-            
-          if(!queue1.isEmpty()){
             t = queue1.element().getTime() - 1;
             queue1.element().setTime(t);
-          }
-          if(!queue2.isEmpty()){
             t = queue2.element().getTime() - 1;
             queue2.element().setTime(t);
-          }
-          if(!queue3.isEmpty()){
             t= queue3.element().getTime() - 1;
             queue3.element().setTime(t);
-          }
-          if(!queue4.isEmpty()){
             t=queue4.element().getTime() - 1;
-            queue4.element().setTime(t);
-          }
-            }
-    
-    
+            queue4.element().setTime(t);        
+        }    
     }
-
     
     void addStats(){
           for (int i =0; i < 8; i++){
