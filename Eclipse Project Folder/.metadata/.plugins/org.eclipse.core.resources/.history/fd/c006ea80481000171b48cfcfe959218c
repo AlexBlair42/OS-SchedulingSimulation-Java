@@ -16,14 +16,14 @@ public class FCFS {
 	int averageTurnaround;
 	int averageResponse;
 	Random y = new Random();
-	int u = y.nextInt(50- 0+1)+1;
+	int u = y.nextInt() % 50 + 1;
 	// A queue to hold all of the processes
     public Queue<Processes> queue = new LinkedList<Processes>();
 	
     // An array to make all of the processes 
-	public Processes[] process = {new Processes(u,"p1"),new Processes(u,"p2"),
-						   new Processes(u,"p3"),new Processes(u,"p4"),
-						   new Processes(u,"p5")};
+	public Processes[] process = {new Processes(10,"p1"),new Processes(20,"p2"),
+						   new Processes(30,"p3"),new Processes(25,"p4"),
+						   new Processes(10,"p5")};
 	
 
 	

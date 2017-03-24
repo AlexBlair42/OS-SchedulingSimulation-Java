@@ -16,7 +16,7 @@ public class FCFS {
 	int averageTurnaround;
 	int averageResponse;
 	Random y = new Random();
-	int u = y.nextInt(50- 0+1)+1;
+	int u = y.nextInt() % (50) + 10;
 	// A queue to hold all of the processes
     public Queue<Processes> queue = new LinkedList<Processes>();
 	
