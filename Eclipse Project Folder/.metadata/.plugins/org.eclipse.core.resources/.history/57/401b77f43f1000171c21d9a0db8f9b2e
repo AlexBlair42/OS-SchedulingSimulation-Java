@@ -33,7 +33,6 @@ public class RR {
 		// While loop to keep running while the queue is not empty
 		while (!RRQ.isEmpty())
 		{
-			// If the start time for a process equals 0 set the start time to total time
 			if (RRQ.element().getstartTime() == 0){
 			RRQ.element().setStartTime(totalTime);
 			}
@@ -41,13 +40,10 @@ public class RR {
 			do {	
 				time++;			
 				totalTime++;
-				// While the time is less than the time quantum or equals 0 do work
 			}while (time <= t_quant -1 || RRQ.element().getTime() == 0);
 			
-			// Set the response time to a variable
 			t = RRQ.element().getTime() - time;
 			RRQ.element().setTime(t);
-			// reset time to 0
 			time =0;
 			
 			// Set the turn around time to the total time. This will need to be adjusted for the Round Robin
@@ -55,22 +51,16 @@ public class RR {
 			
 			// Remove the process from the queue
 			if(RRQ.element().getTime()<= 0){
-				// Calculate wait time and put it into the waitTime variable
 				waitTime = totalTime - RRQ.element().getstartTime();
 				RRQ.element().setWaitTime(waitTime);
-				// Calculate the response time and put it into a variable
 				Resp = RRQ.element().getStaticTime() + RRQ.element().getwaitTime();
 				RRQ.element().setResponse(Resp);
-				// Remove the element if the time <= 0
 				RRQ.remove();	
 			}
 			else
 			{
-				// Otherwise set the element to a variable
 				Processes p = RRQ.element();
-				// Remove the process from the queue
 				RRQ.remove();			
-				// Then add it to the end of the queue to continue executing until finished
 				RRQ.add(p);
 			}
 			if (!RRQ.isEmpty())
