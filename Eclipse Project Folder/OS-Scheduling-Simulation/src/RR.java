@@ -9,7 +9,8 @@ public class RR {
 	int avgWait;
 	int avgTurn;
 	int avgResp;
-	int t_quant1 = 20;
+	int time = 0;
+	int t;
 	int t_quant2 = 30;
 	int t-quant3 = 40;
 	// A queue to hold all processes
@@ -22,7 +23,7 @@ public class RR {
 	 * This function executes the Round Robin Algorithm
 	 */
 	
-	void runRR()
+	void runRR(int t_quant)
 	{
 		// add a process to the queue
 		for (int i = 0; i < 5; i++)
@@ -33,17 +34,29 @@ public class RR {
 		while (!RRQ.isEmpty())
 		{
 			// This loop will simulate the CPU doing work
-			for (int i = 0; RRQ.element().getTime() < t_quant; i++)
-			{
+			do {	
+				
+				time++;
+				t = RRQ.element().getTime() - time;
+				RRQ.element().setTime(t);
 				totalTime++;
-			}
+			}while (time< t_quant || RRQ.element().getTime() == 0);
+		
+			time =0;
 			
 			// Set the turn around time to the total time. This will need to be adjusted for the Round Robin
 			RRQ.element().setTurnaround(totalTime);
 			
 			// Remove the process from the queue
+			if(RRQ.element().getTime()==0){
 			RRQ.remove();
-			
+			}
+			else
+			{
+				Processes p = RRQ.element();
+				RRQ.remove();
+				RRQ.add(p);
+			}
 			if (!RRQ.isEmpty())
 			{
 				// Set the time to the time the process waited (Needs Modified)
