@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Random;
 import java.util.Scanner;
 
 public class RR {
@@ -15,7 +14,7 @@ public class RR {
 	int waitTime= 0;
 	int Resp;
 	Random r = new Random();
-	int k = r.nextInt() % 50 + 1;
+	int k = r.nextInt() %  + 1;
 	
 	// A queue to hold all processes
 	public Queue<Processes> RRQ = new LinkedList<Processes>(); 

@@ -114,7 +114,7 @@ public class FeedBack {
        		// adds up all of the turnaround times for the processes
        		averageTurnaround= averageTurnaround + process[i].getTurnaround();
        		// add up all of the response time for the process
-       		averageResponse = averageResponse + process[i].getstartTime();
+       		averageResponse = averageResponse + process[i].getResponse();
        	}
        	// Calculates the averages for the wait time, turnaround, and responses times.
        	averageWaitTime = averageWaitTime/5;
