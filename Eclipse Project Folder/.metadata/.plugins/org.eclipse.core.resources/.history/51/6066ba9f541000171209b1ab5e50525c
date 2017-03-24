@@ -31,9 +31,6 @@ public class FCFS {
  * This function runs the model for the scheduler 	
  */
 	void runFCFS(){
-		for(int z = 0; z < 5; z++){
-			process[z].isPositive(process[z]);
-		}
 // add the process to the queue
         	for (int i = 0; i < 5; i++){
         		queue.add(process[i]);

@@ -23,9 +23,6 @@ public class Multiprocessor {
                new Processes(10,"p5"), new Processes(50,"p6"), new Processes(40, "p7"), new Processes(40,"p8")};
     
     void runMP(){
-    	for(int z = 0; z < 5; z++){
-			process[z].isPositive(process[z]);
-		}
         queue1.add(process[0]);
         queue1.add(process[1]);
         queue2.add(process[2]);

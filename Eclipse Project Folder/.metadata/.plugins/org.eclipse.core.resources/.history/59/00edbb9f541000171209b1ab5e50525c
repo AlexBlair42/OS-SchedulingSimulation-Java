@@ -31,9 +31,6 @@ public class FeedBack {
 	
 	
 	void runFeedback(){
-		for(int z = 0; z < 5; z++){
-			process[z].isPositive(process[z]);
-		}
 		for (int i = 0; i < 5; i++){
 			// Load queue 1
     		queue1.add(process[i]);

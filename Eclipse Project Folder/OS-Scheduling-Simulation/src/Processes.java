@@ -39,7 +39,7 @@ public class Processes{
 		staticTime = t;
 	}
 
-}
+
 
 //change negative time to positive
 	public int makePositive(int t){
@@ -54,4 +54,5 @@ public class Processes{
 		{
 			t.setTime(t.makePositive(t.getTime()));
 		}
-			
+	}
+}
