@@ -39,6 +39,12 @@ public class Main {
     	FBrun.addStats();
     	FBrun.showStatsFB();
 	System.out.printf("\n");
+	
+	Multiprocessor Mprun = new Multiprocessor();
+	Mprun.runMP();
+	Mprun.addStats();
+	Mprun.showStatsMP();
+	System.out.printf("\n");
     	
     	
 
