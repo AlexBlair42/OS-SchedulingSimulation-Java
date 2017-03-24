@@ -1,4 +1,4 @@
-public class Processes{
+public class Processes extends PCB{
 	private int time;
 	private String name;
 	private int waitTime;

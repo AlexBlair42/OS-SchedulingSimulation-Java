@@ -22,11 +22,11 @@ public class Main {
     	ArrayList<PEC> readyProcess = new ArrayList<PEC>();
     	
     	
-    	FCFS run = new FCFS();
+ /*   	FCFS run = new FCFS();
     	run.runFCFS();
     	run.addStats();
     	run.showStatsFCFS();
- 	
+   */ 	
     	RR RRrun = new RR();
     	RRrun.runRR(50);
     	RRrun.CalcStats();

@@ -12,7 +12,6 @@ public class RR {
 	int time = 0;
 	int t;
 	int waitTime= 0;
-	int Resp;
 	// A queue to hold all processes
 	public Queue<Processes> RRQ = new LinkedList<Processes>(); 
 	// An array to make all of the processes
@@ -33,15 +32,12 @@ public class RR {
 		// While loop to keep running while the queue is not empty
 		while (!RRQ.isEmpty())
 		{
-			if (RRQ.element().getstartTime() == 0){
 			RRQ.element().setStartTime(totalTime);
-			}
 			// This loop will simulate the CPU doing work
 			do {	
 				time++;			
 				totalTime++;
 			}while (time <= t_quant -1 || RRQ.element().getTime() == 0);
-			
 			t = RRQ.element().getTime() - time;
 			RRQ.element().setTime(t);
 			time =0;
@@ -53,8 +49,6 @@ public class RR {
 			if(RRQ.element().getTime()<= 0){
 				waitTime = totalTime - RRQ.element().getstartTime();
 				RRQ.element().setWaitTime(waitTime);
-				Resp = RRQ.element().getStaticTime() + RRQ.element().getwaitTime();
-				RRQ.element().setResponse(Resp);
 				RRQ.remove();	
 			}
 			else
@@ -96,9 +90,10 @@ public class RR {
 	/**
 	 * Prints stats to the console
 	 */
-	void ConsoleStats(int n)
+	void ConsoleStats()
 	{
-		System.out.printf("RR q = %d: \n",n);
+		System.out.println("RR: ");
+		System.out.printf("P2: %d \n",process[1].getwaitTime());
     	System.out.printf("Average Wait Time: %d ms\n",avgWait);
     	System.out.printf("Average Turnaround Time: %d ms\n",avgTurn);
     	System.out.printf("Average Response Time: %d ms\n", avgResp);

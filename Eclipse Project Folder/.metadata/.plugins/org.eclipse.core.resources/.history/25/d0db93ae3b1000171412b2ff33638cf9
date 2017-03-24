@@ -1,11 +1,10 @@
-public class Processes{
-	private int time;
-	private String name;
-	private int waitTime;
-	private int turnaround;
-	private int response;
-	private int startTime =0;
-	private int staticTime;
+public class Processes {
+	int time;
+	String name;
+	int waitTime;
+	int turnaround;
+	int response;
+	 int startTime;
 	
 	int getwaitTime(){return waitTime;}
 	int getTime(){return time;}
@@ -13,7 +12,6 @@ public class Processes{
 	int getTurnaround(){return turnaround;}
 	int getResponse(){return response;}
 	int getstartTime(){return startTime;}
-	int getStaticTime(){return staticTime;}
 	
 	void setTime( int t){
 		time = t;
@@ -30,13 +28,10 @@ public class Processes{
 	void setResponse(int r){
 		response=r;
 	}
-	
 	 void setStartTime(int s){ startTime = s;}
 	
 	public Processes(int t, String n){
 		time = t;
 		name = n;
-		staticTime = t;
 	}
-
 }

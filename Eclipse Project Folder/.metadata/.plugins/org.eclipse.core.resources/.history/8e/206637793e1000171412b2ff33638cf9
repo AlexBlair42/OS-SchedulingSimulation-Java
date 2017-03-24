@@ -98,7 +98,8 @@ public class RR {
 	 */
 	void ConsoleStats(int n)
 	{
-		System.out.printf("RR q = %d: \n",n);
+		System.out.printf("RR q=%d: ",n);
+		System.out.printf("P2: %d \n",process[1].getwaitTime());
     	System.out.printf("Average Wait Time: %d ms\n",avgWait);
     	System.out.printf("Average Turnaround Time: %d ms\n",avgTurn);
     	System.out.printf("Average Response Time: %d ms\n", avgResp);

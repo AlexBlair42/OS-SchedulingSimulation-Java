@@ -11,8 +11,6 @@ public class RR {
 	int avgResp;
 	int time = 0;
 	int t;
-	int waitTime= 0;
-	int Resp;
 	// A queue to hold all processes
 	public Queue<Processes> RRQ = new LinkedList<Processes>(); 
 	// An array to make all of the processes
@@ -33,34 +31,28 @@ public class RR {
 		// While loop to keep running while the queue is not empty
 		while (!RRQ.isEmpty())
 		{
-			if (RRQ.element().getstartTime() == 0){
-			RRQ.element().setStartTime(totalTime);
-			}
 			// This loop will simulate the CPU doing work
 			do {	
-				time++;			
+				
+				time++;
+				t = RRQ.element().getTime() - time;
+				RRQ.element().setTime(t);
 				totalTime++;
-			}while (time <= t_quant -1 || RRQ.element().getTime() == 0);
-			
-			t = RRQ.element().getTime() - time;
-			RRQ.element().setTime(t);
+			}while (time< t_quant || RRQ.element().getTime() == 0);
+		
 			time =0;
 			
 			// Set the turn around time to the total time. This will need to be adjusted for the Round Robin
 			RRQ.element().setTurnaround(totalTime);
 			
 			// Remove the process from the queue
-			if(RRQ.element().getTime()<= 0){
-				waitTime = totalTime - RRQ.element().getstartTime();
-				RRQ.element().setWaitTime(waitTime);
-				Resp = RRQ.element().getStaticTime() + RRQ.element().getwaitTime();
-				RRQ.element().setResponse(Resp);
-				RRQ.remove();	
+			if(RRQ.element().getTime()==0){
+			RRQ.remove();
 			}
 			else
 			{
 				Processes p = RRQ.element();
-				RRQ.remove();			
+				RRQ.remove();
 				RRQ.add(p);
 			}
 			if (!RRQ.isEmpty())
@@ -96,9 +88,9 @@ public class RR {
 	/**
 	 * Prints stats to the console
 	 */
-	void ConsoleStats(int n)
+	void ConsoleStats()
 	{
-		System.out.printf("RR q = %d: \n",n);
+		System.out.println("RR: ");
     	System.out.printf("Average Wait Time: %d ms\n",avgWait);
     	System.out.printf("Average Turnaround Time: %d ms\n",avgTurn);
     	System.out.printf("Average Response Time: %d ms\n", avgResp);
