@@ -29,6 +29,9 @@ public class RR {
 	
 	void runRR(int t_quant)
 	{
+		for(int z = 0; z < 5; z++){
+			process[z].isPositive(process[z]);
+		}
 		// add a process to the queue
 		for (int i = 0; i < 5; i++)
 		{
@@ -44,7 +47,10 @@ public class RR {
 			do {	
 				time++;			
 				totalTime++;
-			}while (time <= t_quant -1 || RRQ.element().getTime() == 0);
+			t = RRQ.element().getTime() - 1;
+				RRQ.element().setTime(t);
+			}while (time >= t_quant -1 && RRQ.element().getTime() <= 0);
+			
 			
 			t = RRQ.element().getTime() - time;
 			RRQ.element().setTime(t);

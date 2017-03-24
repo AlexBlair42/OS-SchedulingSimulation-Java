@@ -40,3 +40,18 @@ public class Processes{
 	}
 
 }
+
+//change negative time to positive
+	public int makePositive(int t){
+		t = (-1) * t;
+		return t;
+		
+	}
+	//method to check to see if the time is negative
+	//calls the method makePositive if it is negative
+	public void isPositive(Processes t){
+		if(t.getTime() < 0)
+		{
+			t.setTime(t.makePositive(t.getTime()));
+		}
+			
