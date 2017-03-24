@@ -16,15 +16,12 @@ public class FeedBack {
 	int Resp;
 	
 	Random o = new Random();
-	// Randomize the process times
 	int e = o.nextInt(60 - 10)+10;
 	
-	// Create 3 queues for process to run in
 	public Queue<Processes> queue1 = new LinkedList<Processes>();
 	public Queue<Processes> queue2 = new LinkedList<Processes>();
 	public Queue<Processes> queue3 = new LinkedList<Processes>();
 	
-	// Create an array of processes 
 	public Processes[] process = {new Processes(e,"p1"),new Processes(e,"p2"),
 			   new Processes(e,"p3"),new Processes(e,"p4"),
 			   new Processes(e,"p5")};
@@ -32,7 +29,6 @@ public class FeedBack {
 	
 	void runFeedback(){
 		for (int i = 0; i < 5; i++){
-			// Load queue 1
     		queue1.add(process[i]);
     	}
 		while (!queue1.isEmpty())
@@ -60,7 +56,6 @@ public class FeedBack {
 			}
 			else
 			{
-				// If process is not done add it to queue 2
 				Processes p = queue1.element();
 				queue1.remove();			
 				queue2.add(p);
@@ -68,7 +63,6 @@ public class FeedBack {
 			
 		
 		while (!queue2.isEmpty()){
-			// Execute process in queue 2
 			do {
 				time++;
 				totalTime++;
@@ -78,7 +72,6 @@ public class FeedBack {
 			queue2.element().setTime(t);
 			time = 0;
 			
-			// If process finishes remove it from queue 2
 			if(queue2.element().getTime() <= 0){
 				waitTime = totalTime - queue2.element().getstartTime();
 				queue2.element().setWaitTime(waitTime);
@@ -87,13 +80,11 @@ public class FeedBack {
 				queue2.remove();
 			}
 			else {
-				// Otherwise add it to queue 3 to continue
 			 Processes p = queue2.element();
 			 queue2.remove();
 			 queue3.add(p);
 			}
 		}
-		// Work through queue 3
 		while(!queue3.isEmpty()){
 			do{
 				time++;
@@ -104,7 +95,6 @@ public class FeedBack {
 			queue3.element().setTime(t);
 			time = 0;
 			
-			// If process finishes remove it from queue 3
 			if(queue3.element().getTime() <= 0){
 				waitTime = totalTime - queue3.element().getstartTime();
 				queue3.element().setWaitTime(waitTime);
@@ -113,7 +103,6 @@ public class FeedBack {
 				queue3.remove();
 			}
 			else {
-				// If the process is still not done then add it to the end of queue 1 after all other processes
 				Processes p = queue3.element();
 				queue3.remove();
 				queue1.add(p);
